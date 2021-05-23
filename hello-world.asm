@@ -2,9 +2,9 @@ section .data
 msg db "Hello new world!", 0x0a
 
 section .text
-global _main
+global start
 
-_main:
+start:
   mov rax, msg
   call strlen
   call print
