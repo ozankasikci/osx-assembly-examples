@@ -1,0 +1,6 @@
+#!/bin/bash
+cd $(dirname $0)/..
+pwd
+TAR=$1
+
+nasm -f macho64 "${TAR}.asm" -o ./build/$TAR.o  && ld -macosx_version_min 10.7.0 -o ./build/$TAR ./build/$TAR.o && ./build/$TAR
